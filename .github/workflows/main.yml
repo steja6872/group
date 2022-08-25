@@ -1,0 +1,12 @@
+on: [push]
+name: Resources List
+
+jobs:
+ build-and-deploy:
+    runs-on: [windows-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Resources List
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_RESOURCES_LIST }}
